@@ -1,0 +1,31 @@
+<html>
+    <head>
+  <!--css-->
+         <link rel="stylesheet" type="text/css" href="/css/main.css" media= "screen, projection">
+
+        {% if title %}
+        <title>{{ title }} - Treœæ</title>
+        {% endif %}
+
+    </head>
+    <body>
+        <div >TREŒÆ WIADOMOŒCI </div>
+        <hr>
+        {% block content %}{% endblock %}
+
+        <table>
+        <tbody>
+            <tr><p><th>Id</th><th>Tresc</th><th>Data<th><b></th><th><b></th></b></p></tr>
+            {% for t in tresci %}
+                <tr>
+                    <p><th>{{t.id}}</th><td>{{t.Tresc}}</td> <td><b>{{ t.Data }}</b></td></p>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+
+
+
+    </body>
+</html>

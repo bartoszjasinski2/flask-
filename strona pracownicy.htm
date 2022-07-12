@@ -1,0 +1,31 @@
+<html>
+    <head>
+  <!--css-->
+         <link rel="stylesheet" type="text/css" href="/css/main.css" media= "screen, projection">
+
+        {% if title %}
+        <title>{{ title }} - Student</title>
+        {% endif %}
+
+    </head>
+    <body>
+        <div >LISTA PRACOWNIKÓW </div>
+        <hr>
+        {% block content %}{% endblock %}
+
+        <table>
+        <tbody>
+            <tr><p><th>Id</th><th>Tytu³</th><th>Imiê</th><th>Nazwisko</th><th>Pokój</th><th>Katedra<th><b></th><th><b></th></b></p></tr>
+            {% for p in pracownicy %}
+                <tr>
+                    <p><th>{{p.id}}</th><td>{{p.Tytul}}</td> <td><b>{{ p.Imie }}</b></td><td><b>{{p.Nazwisko}}</b></td><td><b>{{p.Pokoj}}</b></td><td><b>{{p.Katedra}}</b></td></p>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+
+
+
+    </body>
+</html>
